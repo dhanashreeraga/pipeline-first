@@ -3,18 +3,20 @@ pipeline {
     stages {
          stage('build'){
              steps{
-                 sh echo "it is build"
+                  sh 'sleep 10'
+                 echo "it is build"
              }
          }
          stage('test'){
-             step{
+             steps{
                 sh 'sleep 10'
                   echo "test the app"
              }
          }
          stage('deploy'){
-            step{
-                 sh echo "deploy the app"
+            steps{
+                sh 'sleep 20'
+                  echo "deploy the app"
             }
 
          }
