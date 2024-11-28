@@ -3,7 +3,7 @@ pipeline {
          environment{
              APP = 'frontend'
              GIT_BRANCH = 'main'
-              GIT_CREDENTIAL = 'github_dhanashree'
+              GIT_CREDENTIAL =  'gitgub_dhanashree'
               GIT_URL = 'https://github.com/dhanashreeraga/pipeline-first.git'
          }
          stages {
