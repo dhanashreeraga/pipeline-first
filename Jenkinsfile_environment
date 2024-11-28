@@ -1,0 +1,30 @@
+pipeline { 
+    agent any 
+         environment{
+             APP = 'frontend'
+             GIT-BRANCH = 'main'
+              GIT_CREDENTIAL = 'gitgub_dhanashree',
+              GIT_URL = 'https://github.com/dhanashreeraga/pipeline-first.git'
+         }
+         stages {
+             stage('CHECKOUT') {
+                 steps {
+                    script  {
+                     git branch: "${env.GIT_BRANCH}",
+                      credentialsId: "${env.GIT_CREDTENTIAL}",
+                       url: "${env.GIT_URL}"
+                 }
+                 }
+             }
+             stage('CHECK'){
+                steps {
+                sh '''
+                   ls -lrt
+                   echo $GIT_BRANCH
+                   env
+                   '''
+             }
+             }
+         }
+     }
+
