@@ -2,7 +2,7 @@ pipeline {
     agent any 
          environment{
              APP = 'frontend'
-             GIT-BRANCH = 'main'
+             GIT_BRANCH = 'main'
               GIT_CREDENTIAL = 'gitgub_dhanashree'
               GIT_URL = 'https://github.com/dhanashreeraga/pipeline-first.git'
          }
