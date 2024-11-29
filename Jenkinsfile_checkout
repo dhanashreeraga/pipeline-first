@@ -1,11 +1,11 @@
 pipeline { 
     agent any 
-         environment{
-             APP = 'frontend'
+         environment {
              GIT_BRANCH = 'main'
               GIT_CREDENTIAL =  'git_dhanu'
               GIT_URL = 'https://github.com/dhanashreeraga/pipeline-first.git'
-         } stages {
+         } 
+         stages {
              stage('CHECKOUT') {
                  steps {
                     script  {
