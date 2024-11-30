@@ -3,16 +3,18 @@ pipeline {
          environment{
              APP = 'frontend'
              GIT_BRANCH = 'main'
-              GIT_CREDENTIAL =  'git_dhanu'
+              GIT_CREDENTIALS =  'git_dhanu'
               GIT_URL = 'https://github.com/dhanashreeraga/pipeline-first.git'
          }
          stages {
              stage('CHECKOUT') {
                  steps {
-                    script  {
-                     git branch: "${env.GIT_BRANCH}",
+                    script  { 
+                       
+
+                  git branch: "${env.GIT_BRANCH}",
                       credentialsId: "${env.GIT_CREDENTIAL}",
-                       url: "${env.GIT_URL}"
+                      url: "${env.GIT_URL}"
                  }
                  }
              }
