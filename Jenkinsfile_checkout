@@ -2,17 +2,20 @@ pipeline {
     agent any 
          environment {
              GIT_BRANCH = 'main'
-              GIT_CREDENTIAL =  'git_dhanu'
-              GIT_URL = 'https://github.com/dhanashreeraga/pipeline-first.git'
+              GIT_CREDENTIALS = 'git_dhanu'
+              GIT_URL='https://github.com/dhanashreeraga/pipeline-first.git'
          } 
          stages {
              stage('CHECKOUT') {
                  steps {
                     script  {
-                         checkout([$class: 'GITSCM',
-                         branches: [[name: "${env.GIT_BRANCH}"]], 
-                         userRemoteConfigs: [[credentialsId:"${env.GIT_CREDENTIAL}",
-                          url: "${env.GIT_URL}"]]])
+                        //  checkout([$class: 'GITSCM',
+                        //  branches: [[name: "${env.GIT_BRANCH}"]], 
+                        //  userRemoteConfigs: [[credentialsId:"${env.GIT_CREDENTIALS}",
+                        //   url: "${env.GIT_URL}"]]])
+                         checkout scmGit(branches: [[name: '*/main']], extensions: [], 
+                         userRemoteConfigs: [[credentialsId: 'git_dhanu',
+                          url: 'https://github.com/dhanashreeraga/pipeline-first.git']])
             
                      
                  }
