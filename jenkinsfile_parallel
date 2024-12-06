@@ -7,15 +7,42 @@ pipeline{
                  sh 'sleep 2'
             }
          }
-           stage('stage2'){
+             stage('parrael stage'){
+             parallel{
+                 stage(test1){
+             steps{
+                sh 'sleep 10'
+                  echo "test the app"
+             }
+             }
+         
+         stage('test2'){
             steps{
-                 sh 'sleep 2'
+                sh 'sleep 20'
+                  echo "deploy the app"
             }
          }
-           stage('stage3'){
-            steps {
-                 sh 'sleep 2'
-            } 
          }
-      }
+             } 
+         stage('paralle2 stage'){
+             parallel{
+                 stage('test3'){
+             steps{
+                sh 'sleep 10'
+                  echo "test the app"
+             }
+             }
+         
+         stage('test4'){
+            steps{
+                sh 'sleep 20'
+                  echo "deploy the app"
+            }
+         }
+         }
+         }
+    }
+
 }
+
+      
