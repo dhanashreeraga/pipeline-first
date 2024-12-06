@@ -2,7 +2,7 @@ pipeline{
      agent any
 
     parameters {
-      booleanParam defaultValue: true,  description: 'deploy or not', name: 'RUN_PROJECT'
+      booleanParam defaultValue: false,  description: 'deploy or not', name: 'RUN_PROJECT'
        string defaultValue: 'test', description: 'target server to deploy', name: 'env_target', trim: true
 
     }
