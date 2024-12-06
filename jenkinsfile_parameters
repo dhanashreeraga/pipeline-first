@@ -1,0 +1,14 @@
+pipeline{
+     agent any
+    parameters{
+      booleanParam defaultValue: true, name: 'RUN_PROJECT'
+
+    }
+    stages{
+        stage('stage1'){
+            steps{
+                 echo "BOOLEAN: ${params.RUN_PROJECT}"
+            }
+        }
+    }
+}
