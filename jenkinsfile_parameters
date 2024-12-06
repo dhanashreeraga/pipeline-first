@@ -11,7 +11,7 @@ pipeline{
             steps{
                  echo "BOOLEAN: ${params.RUN_PROJECT}"
                  echo "STRING :  ${params.env_target}"
-                 echo " choices:${ params.choose}"
+                 echo "choices: ${params.choose}"
                  
             }
         }
