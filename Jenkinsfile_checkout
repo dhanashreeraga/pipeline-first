@@ -9,6 +9,7 @@ pipeline {
              stage('CHECKOUT') {
                  steps {
                     script  {
+<<<<<<< HEAD
                         //  checkout([$class: 'GITSCM',
                         //  branches: [[name: "${env.GIT_BRANCH}"]], 
                         //  userRemoteConfigs: [[credentialsId:"${env.GIT_CREDENTIALS}",
@@ -16,6 +17,12 @@ pipeline {
                          checkout scmGit(branches: [[name: '*/main']], extensions: [], 
                          userRemoteConfigs: [[credentialsId: 'git_dhanu',
                           url: 'https://github.com/dhanashreeraga/pipeline-first.git']])
+=======
+                         checkout([$class: 'GitSCM',
+                         branches: [[name: "${env.GIT_BRANCH}"]], 
+                         userRemoteConfigs: [[credentialsId:"${env.GIT_CREDENTIAL}",
+                          url: "${env.GIT_URL}"]]])
+>>>>>>> 45add7f6c69a0aabb290bde9ce2fa65443fdfdd1
             
                      
                  }
