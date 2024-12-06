@@ -1,21 +1,19 @@
 pipeline{
      agent any
-     
-      stages{
+     stages{
          stage('stage1'){
             steps{
                  sh 'sleep 2'
             }
          }
-             stage('parrael stage'){
+             stage('parallel testing'){
              parallel{
-                 stage(test1){
+                 stage('test1'){
              steps{
                 sh 'sleep 10'
                   echo "test the app"
              }
              }
-         
          stage('test2'){
             steps{
                 sh 'sleep 20'
@@ -24,7 +22,7 @@ pipeline{
          }
          }
              } 
-         stage('paralle2 stage'){
+         stage('paralle2 testing'){
              parallel{
                  stage('test3'){
              steps{
@@ -32,7 +30,6 @@ pipeline{
                   echo "test the app"
              }
              }
-         
          stage('test4'){
             steps{
                 sh 'sleep 20'
