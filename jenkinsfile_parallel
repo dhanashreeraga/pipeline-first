@@ -1,3 +1,21 @@
 pipeline{
      agent any
+     
+      stages{
+         stage('stage1'){
+            steps{
+                 sh 'sleep 2'
+            }
+         }
+           stage('stage2'){
+            steps{
+                 sh 'sleep 2'
+            }
+         }
+           stage('stage3'){
+            steps {
+                 sh 'sleep 2'
+            } 
+         }
+      }
 }
