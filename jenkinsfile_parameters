@@ -1,13 +1,16 @@
 pipeline{
      agent any
-    parameters{
-      booleanParam defaultValue: true, name: 'RUN_PROJECT'
+
+    parameters {
+      booleanParam defaultValue: true,  description: 'deploy', name: 'RUN_PROJECT'
+       string defaultValue: 'test', description: 'target server to deploy', name: 'env_target', trim: true
 
     }
     stages{
         stage('stage1'){
             steps{
                  echo "BOOLEAN: ${params.RUN_PROJECT}"
+                 echo  "STRING :  ${params.env_target}"
             }
         }
     }
