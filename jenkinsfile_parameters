@@ -4,14 +4,18 @@ pipeline{
     parameters {
       booleanParam defaultValue: false,  description: 'deploy or not', name: 'RUN_PROJECT'
        string defaultValue: 'test', description: 'target server to deploy', name: 'env_target', trim: true
- choice choices: ['choice1', 'choice2', 'choice3'], description: 'choose the options to run the job', name: 'choose'
+ choice choices: ['choice1', 'choice2', 'choice3'], description: 'choose the options to run the job', name: 'choose' 
+  password defaultValue: 'security', description: 'enter the password', name: 'password'
+
     }
     stages{
         stage('stage1'){
             steps{
                  echo "BOOLEAN: ${params.RUN_PROJECT}"
                  echo "STRING :  ${params.env_target}"
-                 echo "choices: ${params.choose}"
+                 echo "choices: ${params.choose}" 
+                 echo "password: ${params.password}"
+
                  
             }
         }
