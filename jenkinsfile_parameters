@@ -6,6 +6,7 @@ pipeline{
        string defaultValue: 'test', description: 'target server to deploy', name: 'env_target', trim: true
  choice choices: ['choice1', 'choice2', 'choice3'], description: 'choose the options to run the job', name: 'choose' 
   password defaultValue: 'security', description: 'enter the password', name: 'password'
+    credentials credentialType: 'com.cloudbees.plugins.credentials.impl.UsernamePasswordCredentialsImpl', defaultValue: 'git_dhanu', description: 'add the credentials', name: 'dhanu', required: false
 
     }
     stages{
@@ -15,6 +16,7 @@ pipeline{
                  echo "STRING :  ${params.env_target}"
                  echo "choices: ${params.choose}" 
                  echo "password: ${params.password}"
+                 echo "credentials: ${params.dhanu}"
 
                  
             }
