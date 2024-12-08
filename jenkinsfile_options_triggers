@@ -16,14 +16,14 @@ pipeline {
     stages {
          stage('stage1'){
              steps{
-                  sh 'sleep 10'
+                  sh 'sleep 3'
                 
              }
          }
              
                  stage('stage2'){
              steps{
-                sh 'sleep 10'
+                sh 'sleep  4'
                   
              }
              }
