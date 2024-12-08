@@ -4,11 +4,15 @@ pipeline {
     options{
         ansiColor('xterm')
         buildDiscarder(logRotator(numToKeepStr: '5')) 
-         disableConcurrentBuilds(abortPrevious: true) 
-          retry(3) 
-          timeout(time: 5, unit: 'SECONDS')
-          timestamps() 
+        //  disableConcurrentBuilds(abortPrevious: true) 
+        //   retry(3) 
+        //   timeout(time: 5, unit: 'SECONDS')
+        //   timestamps() 
     }
+     triggers{
+         cron('*/2 * * * *')
+         pollSCM('H */2 * * 1-5')
+     }
     stages {
          stage('stage1'){
              steps{

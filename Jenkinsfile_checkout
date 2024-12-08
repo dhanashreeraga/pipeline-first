@@ -9,7 +9,7 @@ pipeline {
              stage('CHECKOUT') {
                  steps {
                     script  {
-<<<<<<< HEAD
+
                           checkout([$class: 'GITSCM',
                           branches: [[name: "${env.GIT_BRANCH}"]], 
                           userRemoteConfigs: [[credentialsId:"${env.GIT_CREDENTIALS}",
