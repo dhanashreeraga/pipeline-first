@@ -1,0 +1,24 @@
+pipeline {
+   agent any
+    stages {
+         stage('STAGE1'){
+             when{
+                 branch 'main'
+             }
+             steps{
+                  sh 'sleep 10'
+                 echo "it is build"
+             }
+         }
+             
+                 stage('STAGE2'){
+                    when {
+                        branch 'master'
+                    }
+             steps{
+                sh 'sleep 10'
+                  echo "test the app"
+             }
+             }
+    }
+}
