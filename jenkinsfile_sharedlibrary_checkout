@@ -10,7 +10,7 @@ pipeline {
              stage('CHECKOUT') {
                  steps {
                     script  {    
-                    gitCheckout()
+                    gitCheckout('main','github_admin','https://github.com/dhanashreeraga/pipeline-first.git')
                  }
                    }
              }
