@@ -1,0 +1,27 @@
+@Library('main_library') _
+pipeline { 
+    agent any 
+         environment {
+             GIT_BRANCH = 'main'
+              GIT_CREDENTIALS = 'git_dhanu'
+              GIT_URL='https://github.com/dhanashreeraga/pipeline-first.git'
+         } 
+         stages {
+             stage('CHECKOUT') {
+                 steps {
+                    script  {    
+                    gitCheckout()
+                 }
+                   }
+             }
+             stage('CHECK'){
+                steps {
+                sh '''
+                   ls -lrt
+                   '''
+             }
+             }
+         }
+     }
+          
+         
