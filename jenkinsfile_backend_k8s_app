@@ -1,4 +1,4 @@
-@Library('new_git') _
+@Library('main_library') _
 pipeline {
     agent any
 
