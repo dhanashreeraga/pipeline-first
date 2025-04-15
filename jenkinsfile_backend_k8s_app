@@ -55,7 +55,7 @@ pipeline {
                     sh '''
                         ls -lrt
                     '''
-                    dir('./backend') {
+                    dir('./mern_3tire-main/backend') {
                         dockerImage = docker.build("${IMAGE_NAME}:${IMAGE_TAG}", "-f ${DOCKERFILE_BASE} .")
                         docker.withRegistry('', "${DOCKER_REGISTRY_CRED_ID}") { 
                             dockerImage.push() 
