@@ -1,4 +1,4 @@
-@Library('main_jenkins') _
+@Library('new_git') _
 pipeline {
     agent any
 
@@ -10,7 +10,7 @@ pipeline {
     environment {
         GIT_URL = 'https://github.com/dhanashreeraga/mern_3tire_app.git'
         GIT_BRANCH = 'main'
-        GIT_CREDENTIALS = 'git_token'
+        GIT_CREDENTIALS = 'github_token'
         IMAGE_NAME = 'dhanashreeraga214/backend'
         IMAGE_TAG = 'latest'
         DOCKERFILE_BASE = 'Dockerfile'
