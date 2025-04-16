@@ -74,10 +74,7 @@ pipeline {
                     --template '@/home/ubuntu/trivy/trivy_html.tpl' \\
                     --output 'trivy_backend.html' \\ 
                    --scanners vuln \\
-                   --timeout 10m \\
-                   ${IMAGE_NAME}:${IMAGE_TAG}  || \\
-                  echo "Trivy scan completed with findings"
-                    
+                   --timeout 10m \\      
                 '''
             }
        }
