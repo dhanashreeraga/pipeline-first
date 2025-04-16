@@ -65,22 +65,22 @@ pipeline {
             }
         }
 
-        stage('Trivy Scan') {
-            steps {
-               sh '''
-                    trivy image \
-                    --severity HIGH,CRITICAL \
-                    --format template \
-                    --template '@/home/ubuntu/trivy/trivy_html.tpl' \
-                    --output 'trivy_backend.html' 
-                   --scanners vuln \
-                   --timeout 10m \
-                   ${env.IMAGE_NAME}:${env.IMAGE_TAG}  || \
-                  echo "Trivy scan completed with findings"
+          //  stage('Trivy Scan') {
+       //     steps {
+         //      sh '''
+           //         trivy image \
+             //       --severity HIGH,CRITICAL \
+               //     --format template \
+                 //   --template '@/home/ubuntu/trivy/trivy_html.tpl' \
+                   // --output 'trivy_backend.html' 
+                //   --scanners vuln \
+               //    --timeout 10m \
+              //     ${env.IMAGE_NAME}:${env.IMAGE_TAG}  || \
+                 // echo "Trivy scan completed with findings"
                     
-                 '''
-            }
-        }
+          //       '''
+        //    }
+    //    }
 
     //     stage('Deploy K8S') {
     //         steps {
