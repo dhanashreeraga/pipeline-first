@@ -75,7 +75,7 @@ pipeline {
                     --output 'trivy_backend.html' 
                    --scanners vuln \
                    --timeout 10m \
-                   ${IMAGE_NAME}:${IMAGE_TAG}
+                   ${env.IMAGE_NAME}:${env.IMAGE_TAG}
                     
                  '''
             }
