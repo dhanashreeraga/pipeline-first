@@ -72,11 +72,7 @@ pipeline {
                     --severity HIGH,CRITICAL \
                     --format template \
                     --template '@/home/ubuntu/trivy/trivy_html.tpl' \
-                    --output 'trivy_backend.html' \
-                    --scanners vuln \
-                    --timeout 10m   
-                    ${IMAGE_NAME}:${IMAGE_TAG} 
-                    
+                    --output 'trivy_backend.html'  ${IMAGE_NAME}:${IMAGE_TAG}   
                 '''
             }
        }
