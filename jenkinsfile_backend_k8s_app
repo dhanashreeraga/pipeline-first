@@ -70,7 +70,6 @@ pipeline {
               sh '''
                     trivy image   \
                     --severity HIGH,CRITICAL \
-                    --scanners vuln,config  \
                     --format template \
                     --template '@/home/ubuntu/trivy/trivy_html.tpl' \
                     --output 'trivy_backend.html' ${IMAGE_NAME}:${IMAGE_TAG}
