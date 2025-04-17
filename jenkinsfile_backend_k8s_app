@@ -73,7 +73,7 @@ pipeline {
                     --scanners vuln,config 
                     --format template \\
                     --template '@/home/ubuntu/trivy/trivy_html.tpl' \\
-                    --output 'trivy_backend.html' ${IMAGE_NAME}:${IMAGE_TAG}      
+                    --output 'trivy_backend.html'     
                 '''
             }
        }
