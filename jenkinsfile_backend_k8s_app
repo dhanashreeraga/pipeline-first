@@ -74,7 +74,7 @@ pipeline {
                     --template '@/home/ubuntu/trivy/trivy_html.tpl' \
                     --output 'trivy_backend.html' \
                     --scanners vuln \
-                    --timeout 10m   \ 
+                    --timeout 10m   
                     ${IMAGE_NAME}:${IMAGE_TAG} 
                     
                 '''
