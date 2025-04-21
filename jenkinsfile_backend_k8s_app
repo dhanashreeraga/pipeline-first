@@ -7,7 +7,7 @@ pipeline {
         buildDiscarder(logRotator(daysToKeepStr: '2'))
     }
 
-    environment {
+  environment {
         GIT_URL = 'https://github.com/dhanashreeraga/mern_3tier_app.git'
         GIT_BRANCH = 'main'
         GIT_CREDENTIALS = 'github_token'
