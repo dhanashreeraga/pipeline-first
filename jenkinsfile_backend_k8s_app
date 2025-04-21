@@ -77,23 +77,23 @@ pipeline {
             }
        }
 
-       //   stage('Deploy K8S') {
-          //     steps {
+          stage('Deploy K8S') {
+              steps {
                 
-        //             script {
-       //                   connectToK8s(env.API_URL, env.CREDS_ID, env.CONTEXT_NAME, env.CLUSTER_NAME, env.USER_NAME)
-    //                     withCredentials([usernamePassword(credentialsId: 'argocd-cli-creds', usernameVariable: 'ARGO_USER', passwordVariable: 'ARGO_PASS')]) {
-    //                         argoAppSyncWithCLI(
-    //                           appName: 'backend',
-    //                           argocdHost: '3.110.186.242:31556',
-    //                           username: env.ARGO_USER,
-    //                           password: env.ARGO_PASS,
-    //                           insecure: true
-    //                         )
-    //                       }
-    //                }
-    //         }
-    //     }
+                    script {
+                          connectToK8s(env.API_URL, env.CREDS_ID, env.CONTEXT_NAME, env.CLUSTER_NAME, env.USER_NAME)
+                          withCredentials([usernamePassword(credentialsId: 'argocd-cli-creds', usernameVariable: 'ARGO_USER', passwordVariable: 'ARGO_PASS')]) {
+                                 argoAppSyncWithCLI(
+                              appName: 'backend',
+                               argocdHost: '3.110.186.242:31556',
+                               username: env.ARGO_USER,
+                              password: env.ARGO_PASS,
+                              insecure: true
+                            )
+                          }
+                    }
+             }
+        }
 
      }
 
